@@ -7,5 +7,5 @@ def call(String project, String ImageTag, String hubUser){
         sh "docker login -u '$USER' -p '$PASS'"
     }
     //sh "docker image push ${hubUser}/${project}:${ImageTag}"
-    sh "docker run -d ${hubUser}/${project}:latest"   
+    sh "docker run -d -p 8083:8086 ${hubUser}/${project}:latest"   
 }
